@@ -3,13 +3,6 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-strategy:
-  matrix:
-    node_16_x:
-      node_version: 16.x
-    node_13_x:
-      node_version: 18.x
-
 steps:
   # Install Node.js
   - task: UseNode@1
@@ -19,14 +12,9 @@ steps:
 
   # Install dependencies
   - script: |
-      npm install  --only=dev
+      npm install
     displayName: 'Install dependencies'
     
-  # To use the npm task
-  - task: Npm@1
-    inputs:
-     command: 'install'
-
   # Build the project
   - script: |
       npm run build
