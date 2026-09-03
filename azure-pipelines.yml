@@ -3,9 +3,13 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    node_16_x:
+      node_version: 16.x
+    node_13_x:
+      node_version: 18.x
 
-variables:
-  nodeVersion: '16.x'
 
 steps:
   # Install Node.js
