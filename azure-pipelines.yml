@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  nodeVersion: '18.x'
+  nodeVersion: '16.x'
 
 steps:
   # Install Node.js
