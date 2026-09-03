@@ -3,6 +3,10 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+
+variables:
+  nodeVersion: '18.x'
+
 steps:
   # Install Node.js
   - task: UseNode@1
@@ -14,7 +18,7 @@ steps:
   - script: |
       npm install
     displayName: 'Install dependencies'
-    
+
   # Build the project
   - script: |
       npm run build
