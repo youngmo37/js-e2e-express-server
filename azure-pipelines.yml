@@ -10,7 +10,6 @@ strategy:
     node_13_x:
       node_version: 18.x
 
-
 steps:
   # Install Node.js
   - task: UseNode@1
@@ -20,8 +19,13 @@ steps:
 
   # Install dependencies
   - script: |
-      npm install
+      npm install  --only=dev
     displayName: 'Install dependencies'
+    
+  # To use the npm task
+  - task: Npm@1
+    inputs:
+     command: 'install'
 
   # Build the project
   - script: |
